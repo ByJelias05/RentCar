@@ -16,12 +16,20 @@ export function Reservations(){
                             <h5>Selecciona tus fechas, elige</h5>
                             <h2>el modelo de tu preferencia y  <span> ¡listo!</span></h2>
                         </div>
-                        <button className="All_Vehiculos">Ver todos los vehiculos</button>
+                        <a href="#Inventory" className="All_Vehiculos">Buscar Vehiculo</a>
                     </div>
 
                     <div className="Fav-Form">
                         <div className="VehichlosFavorito">
-                            <h3>Aqui veras tus vehiculos en favorito</h3>
+
+
+                            {/* <div className="Caja-Fav">
+                                <img src="#" alt="foto del vehiculo" />
+                            </div> */}
+
+
+                            <h3 style={{textAlign: 'center'}}>Aqui veras tus vehiculos en favorito</h3>
+                            
                         </div>
                         <div className="reservation-container">
                             <h2>Formulario de Reservación</h2>

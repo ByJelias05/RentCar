@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 1;
     animation: Animar2 .5s linear;
-}
+} 
 
 .Header-Vehicluos{
     width: 100%;
@@ -53,6 +53,13 @@
     justify-content: center;
     grid-template-columns: 2fr 2fr;
 }
+.Vehiculos-Informacion-all{
+   
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr;
+}
+
 
 .Informacion-General-Vehiculo{
     display: flex;
@@ -70,11 +77,6 @@
     border: 2px solid #fff;
 }
 
-.Contenedor-Izquierda{
-
-   
-}
-
 .Btn-TipoVehiculo{
 
     gap: 25px;
@@ -87,12 +89,16 @@
     justify-content: left;
     align-items: center;
 }
+.Btn-TipoVehiculo h3{
+    cursor: pointer;
+}
 
 .Filtro-Autos{
     display: flex;
     justify-content: space-between;
     margin-right: 25px;
-    width: 85%;
+    width: 90%;
+    margin-left: 7%;
 }
 
 .Filtro-Autos input{
@@ -123,12 +129,31 @@
 }
 
 .Cajas-Vehiculos{
-    width: 100%;
+    margin-top: 25px;
+    width: 98%;
     height: 600px;
+    overflow-y: scroll;
     display: grid;
     justify-content: right;
     align-items: center;
     grid-template-columns: repeat(3, 3fr);
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.Cajas-Vehiculos-All{
+    margin-top: 25px;
+    margin-left: 7%;
+    width: 90%;
+    height: 600px;
+    overflow-y: scroll;
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    grid-template-columns: repeat(5, 3fr);
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .Caja{
@@ -165,6 +190,56 @@
 .Caja div img{
     width: 100px;
 }
+
+/* Estilos para el detalle del vehículo */
+.detalle-vehiculo {
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    margin: 8px auto;
+    height: 97%;
+    
+  }
+  
+  .imagen-vehiculo {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .titulo-vehiculo {
+    font-size: 24px;
+    color: #0d1b2a;
+    margin-top: 20px;
+  }
+  
+  .info-vehiculo {
+    font-size: 16px;
+    color: #334155;
+    margin-top: 30px;
+  }
+  
+  .boton-favorito {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: #ffffff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+  }
+  
+  .boton-favorito:hover {
+    background-color: rgb(75, 48, 48);
+  }
+  
 
 @keyframes Animar{
     0%{

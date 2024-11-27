@@ -1,4 +1,4 @@
-import image2 from "../Images/CarroToyota.jpg"
+import image2 from "../Images/CarroHonda.jpg"
 import "../Css/Catalogo.css"
 
 import { IoChevronBack } from "react-icons/io5";
@@ -8,7 +8,7 @@ import { Vehiculo } from "../Components/Boxs/Vehiculo";
 
 import { useRef } from "react";
 
-export function VehiculosToyota({fuction}){
+export function TodosVehiculo({fuction}){
 
     const CarrosRef = useRef(null)
     const JeepRef = useRef(null)
@@ -37,19 +37,19 @@ export function VehiculosToyota({fuction}){
                         <button><IoChevronBack/></button>
                     </div>
                 </div>
-                <div className="Vehiculos-Informacion">
+                <div className="Vehiculos-Informacion-all">
                     <div className="Informacion-General-Vehiculo">
                         <div className="Caja-General">
-                            <div class="detalle-vehiculo">
-                                <img src="ruta-imagen-vehiculo.jpg" alt="Toyota Corolla" class="imagen-vehiculo" />
-                                <h3 class="titulo-vehiculo">Toyota Corolla</h3>
-                                <p class="info-vehiculo"><strong>Tipo de gasolina:</strong> Diésel</p>
-                                <p class="info-vehiculo"><strong>Precio por día:</strong> USD 50</p>
-                                <p class="info-vehiculo"><strong>Capacidad:</strong> 5 pasajeros</p>
-                                <p class="info-vehiculo"><strong>Transmisión:</strong> Automática</p>
-                                <p class="info-vehiculo"><strong>Descripción:</strong> Vehículo cómodo y eficiente, ideal para viajes urbanos y largos recorridos.</p>
-                                <button class="boton-favorito">Agregar a Favoritos</button>
-                            </div>
+                        <div class="detalle-vehiculo">
+                            <img src="ruta-imagen-vehiculo.jpg" alt="Toyota Corolla" class="imagen-vehiculo" />
+                            <h3 class="titulo-vehiculo">Toyota Corolla</h3>
+                            <p class="info-vehiculo"><strong>Tipo de gasolina:</strong> Diésel</p>
+                            <p class="info-vehiculo"><strong>Precio por día:</strong> USD 50</p>
+                            <p class="info-vehiculo"><strong>Capacidad:</strong> 5 pasajeros</p>
+                            <p class="info-vehiculo"><strong>Transmisión:</strong> Automática</p>
+                            <p class="info-vehiculo"><strong>Descripción:</strong> Vehículo cómodo y eficiente, ideal para viajes urbanos y largos recorridos.</p>
+                            <button class="boton-favorito">Agregar a Favoritos</button>
+                        </div>
 
                         </div>
                     </div>
@@ -65,7 +65,12 @@ export function VehiculosToyota({fuction}){
                             </div>
                             
                         </div>
-                        <div className="Cajas-Vehiculos">
+                        <div className="Cajas-Vehiculos-All">
+                        <Vehiculo/>
+                            <Vehiculo/>
+                            <Vehiculo/>
+                            <Vehiculo/>
+                            <Vehiculo/>
                             <Vehiculo/>
                             <Vehiculo/>
                             <Vehiculo/>

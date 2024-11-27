@@ -13,6 +13,7 @@ import { VehiculosKia } from "../../Layouts/VehiculosKia"
 
 import "../../Css/Inventory.css"
 import { MenuContext } from "../../App/App"
+import { TodosVehiculo } from "../../Layouts/TodosVehiculo"
 
 export function Inventory(){
 
@@ -21,7 +22,8 @@ export function Inventory(){
     const objInvetarios = {
         VehiculosKia: VehiculosKia,
         VehiculosToyota: VehiculosToyota,
-        VehiculosHonda: VehiculosHonda
+        VehiculosHonda: VehiculosHonda,
+        TodosVehiculo: TodosVehiculo
     }
 
     const [Catalogo, setCatalogo] = useState("Home_Inventario")
@@ -48,7 +50,7 @@ export function Inventory(){
                                 <h2 className="Borde-Letra2">Disfruta de Auto<span>Flex</span></h2>
                                 </div>
                             </div>
-                            <button className="All_Vehiculos">Ver todos los vehiculos</button>
+                            <button className="All_Vehiculos" onClick={() => {setCatalogo("TodosVehiculo"); setApagarMenu(true)}}>Ver todos los vehiculos</button>
                         </div>
                     <div className="Marcas_Populares">
                             <h1 className="Titulo_Marcas">Marcas populares</h1>

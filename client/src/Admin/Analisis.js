@@ -22,6 +22,7 @@ const Analisis = () => {
         <Link to="/admin/analisis" className="menu-btn">ANÁLISIS</Link>
         <Link to="/admin/economia" className="menu-btn">ECONOMÍA</Link>
         <Link to="/admin/usuarios" className="menu-btn">USUARIOS</Link>
+        <Link to="/admin/Reportes" className="menu-btn">REPORTES</Link>
       </div>
       <div className="content">
         <h2>ANÁLISIS</h2>

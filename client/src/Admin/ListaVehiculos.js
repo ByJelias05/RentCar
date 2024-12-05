@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Css/AdminStyles.css";
 
 const ListaVehiculos = () => {
-  const [vehiculos, setVehiculos] = useState([
-    {
-      id: 1,
-      modelo: "Toyota Corolla",
-      marca: "Toyota",
-      año: "2020",
-      color: "Blanco",
-      img: "../Images/ToyotaCorolla.png",
-    },
-  ]);
+  const [vehiculos, setVehiculos] = useState([]);  // Vehículos desde la base de datos
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedVehiculo, setSelectedVehiculo] = useState(null);
@@ -21,8 +12,28 @@ const ListaVehiculos = () => {
     marca: "",
     año: "",
     color: "",
-    img: "", // Nuevo campo para la imagen
+    img: "",
   });
+
+  // Obtener vehículos desde la API
+  const fetchVehiculos = async () => {
+    try {
+      const response = await fetch("http://localhost:5050/api/CRUD/vehicles");
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Vehículos obtenidos:", data); // Verificar si los datos están correctos
+        setVehiculos(data);
+      } else {
+        console.error("Error al cargar los vehículos");
+      }
+    } catch (error) {
+      console.error("Error al conectar con el servidor:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchVehiculos();  // Cargar vehículos cuando el componente se monte
+  }, []);
 
   // Abrir ventana emergente para agregar vehículo
   const openAddModal = () => {
@@ -38,7 +49,7 @@ const ListaVehiculos = () => {
       marca: vehiculo.marca,
       año: vehiculo.año,
       color: vehiculo.color,
-      img: vehiculo.img, // Cargar la imagen actual al editar
+      img: vehiculo.img,
     });
     setShowEditModal(true);
   };
@@ -64,44 +75,101 @@ const ListaVehiculos = () => {
       formData.marca &&
       formData.año &&
       formData.color &&
-      formData.img // Validar también la imagen
+      formData.img
     );
   };
 
-  // Agregar vehículo
-  const handleAddVehicle = () => {
+  // Agregar vehículo a la base de datos
+  const handleAddVehicle = async () => {
     if (validateForm()) {
       const newVehicle = {
-        ...formData,
-        id: vehiculos.length + 1, // Asignar un ID único
+        modelo: formData.modelo,
+        marca: formData.marca,
+        año: formData.año,
+        color: formData.color,
+        img: formData.img,
       };
-      setVehiculos([...vehiculos, newVehicle]);
-      closeModal();
+
+      try {
+        const response = await fetch("http://localhost:5050/api/CRUD/vehicles", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newVehicle),
+        });
+
+        if (response.ok) {
+          alert("Vehículo agregado correctamente.");
+          fetchVehiculos();  // Recargar la lista de vehículos
+          closeModal();
+        } else {
+          alert("Error al agregar el vehículo.");
+        }
+      } catch (error) {
+        console.error("Error al agregar el vehículo:", error);
+      }
     } else {
       alert("Por favor, completa todos los campos.");
     }
   };
 
-  // Editar vehículo
-  const handleEditVehicle = () => {
+  // Editar vehículo en la base de datos
+  const handleEditVehicle = async () => {
     if (validateForm()) {
-      const updatedVehiculos = vehiculos.map((vehiculo) =>
-        vehiculo.id === selectedVehiculo.id ? { ...selectedVehiculo, ...formData } : vehiculo
-      );
-      setVehiculos(updatedVehiculos);
-      closeModal();
+      const updatedVehicle = {
+        ...formData,
+        id: selectedVehiculo.id,
+      };
+
+      try {
+        const response = await fetch(`http://localhost:5050/api/CRUD/vehicles/${selectedVehiculo.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedVehicle),
+        });
+
+        if (response.ok) {
+          alert("Vehículo editado correctamente.");
+          fetchVehiculos();  // Recargar la lista de vehículos
+          closeModal();
+        } else {
+          alert("Error al editar el vehículo.");
+        }
+      } catch (error) {
+        console.error("Error al editar el vehículo:", error);
+      }
     } else {
       alert("Por favor, completa todos los campos.");
     }
   };
 
-  // Eliminar vehículo con confirmación
-  const handleDeleteVehicle = (vehiculo) => {
-    const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar este vehículo?");
-    if (confirmDelete) {
-      setVehiculos(vehiculos.filter((v) => v.id !== vehiculo.id));
+  // Eliminar vehículo de la base de datos
+const handleDeleteVehicle = async (vehicleId) => {
+  const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar este vehículo?");
+  if (confirmDelete) {
+    try {
+      // Aquí se interpolará el vehicleId en la URL
+      const response = await fetch(`http://localhost:5050/api/CRUD/${vehicleId}`, {
+        method: "DELETE", // Método DELETE
+      });
+
+      if (response.ok) {
+        alert("Vehículo eliminado correctamente.");
+        fetchVehiculos();  // Recargar los vehículos
+      } else {
+        alert("Error al eliminar el vehículo.");
+      }
+    } catch (error) {
+      console.error("Error al eliminar el vehículo:", error);
+      alert("Error al conectar con el servidor.");
     }
-  };
+  }
+};
+
+  
 
   return (
     <div className="admin-page">
@@ -111,7 +179,7 @@ const ListaVehiculos = () => {
         <Link to="/admin/analisis" className="menu-btn">ANÁLISIS</Link>
         <Link to="/admin/economia" className="menu-btn">ECONOMÍA</Link>
         <Link to="/admin/usuarios" className="menu-btn">USUARIOS</Link>
-        <Link to="/admin/Reportes" className="menu-btn">REPORTES</Link>
+        <Link to="/admin/reportes" className="menu-btn">Reportes</Link>
       </div>
       <div className="content">
         <h2>LISTA DE VEHÍCULOS</h2>
@@ -165,18 +233,25 @@ const ListaVehiculos = () => {
           </div>
         )}
 
-        <div className="vehiculos-list">
-          {vehiculos.map((vehiculo) => (
-            <div key={vehiculo.id} className="vehiculo-card">
-              <img src={vehiculo.img} alt={vehiculo.modelo} className="vehiculo-img" />
-              <p className="vehiculo-modelo">{vehiculo.modelo}</p>
-              <div className="vehiculo-actions">
-                <button className="edit-btn" onClick={() => openEditModal(vehiculo)}>✎</button>
-                <button className="delete-btn2" onClick={() => handleDeleteVehicle(vehiculo)}>🗑</button>
-              </div>
-            </div>
-          ))}
+<div className="vehiculos-list">
+{vehiculos.length > 0 ? (
+  vehiculos.map((vehiculo) => (
+    <div key={vehiculo.vehicleId} className="vehiculo-card">
+      <img src={vehiculo.img} alt={vehiculo.model} className="vehiculo-img" />
+      <p className="vehiculo-modelo">{vehiculo.model}</p> {/* Modelo */}
+      <p className="vehiculo-marca">{vehiculo.brand}</p> {/* Marca */}
+      <div className="vehiculo-actions">
+        <button className="edit-btn" onClick={() => openEditModal(vehiculo)}>✎</button>
+        <button className="delete-btn2" onClick={() => handleDeleteVehicle(vehiculo.vehicleId)}>🗑</button>
         </div>
+    </div>
+  ))
+) : (
+  <p>No hay vehículos disponibles.</p>
+)}
+
+</div>
+
       </div>
 
       {/* Ventana emergente para editar vehículo */}

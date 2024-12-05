@@ -17,45 +17,45 @@ export function Contacto(){
             
             <div className="contact-container">
                 <form  className="contact-form">
-                <div className="form-group">
-                    <label htmlFor="name">Nombre</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        // value={name}
-                        // onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="name">Nombre</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            // value={name}
+                            // onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="email">Correo Electrónico</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        // value={email}
-                        // onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Correo Electrónico</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            // value={email}
+                            // onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="message">Mensaje</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        // value={message}
-                        // onChange={(e) => setMessage(e.target.value)}
-                        rows="4"
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="message">Mensaje</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            // value={message}
+                            // onChange={(e) => setMessage(e.target.value)}
+                            rows="4"
+                            required
+                        />
+                    </div>
 
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-                </div>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
    
         </div>
      

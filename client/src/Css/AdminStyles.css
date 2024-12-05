@@ -26,6 +26,14 @@
   border-radius: 10px;
 }
 
+.vehiculo-marca {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  
+}
+
+
 .menu-btn {
   border: none;
   background-color: transparent;

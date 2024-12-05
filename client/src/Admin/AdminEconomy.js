@@ -43,7 +43,7 @@ const AdminEconomy = () => {
         <Link to="/admin/analisis" className="menu-btn">Análisis</Link>
         <Link to="/admin/economia" className="menu-btn">Economía</Link>
         <Link to="/admin/usuarios" className="menu-btn">Usuarios</Link>
-        <Link to="/admin/Reportes" className="menu-btn">Reportes</Link>
+        <Link to="/admin/reportes" className="menu-btn">Reportes</Link>
       </div>
       <div className="data-box">
         <h2>Estado Actual</h2>

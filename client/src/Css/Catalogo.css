@@ -65,7 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: Animar .5s linear;
+    animation: Animar1 .5s linear;
 }
 
 .Caja-General{
@@ -241,7 +241,7 @@
   }
   
 
-@keyframes Animar{
+@keyframes Animar1{
     0%{
         transform: scale(0.3);
     }

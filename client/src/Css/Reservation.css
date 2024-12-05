@@ -66,91 +66,94 @@
 
 /* Contenedor del formulario */
 .reservation-container {
-    width: 70%;
-    height: 60vh;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
 }
 
-/* Título */
 .reservation-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
 }
 
-/* Estilo de los elementos del formulario */
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 .form-group input,
 .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f9f9f9;  /* Cambié el fondo para mejor contraste */
 }
 
-/* Botón de envío */
 .form-group button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff0000;
-    color: #ffffff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
 .form-group button:hover {
-    background-color: #a57171;
+  background-color: #a57171;  /* Cambio de color al pasar el ratón */
 }
 
-.Fav-Form{
-    position: absolute;
-    bottom: 0;
-    width: 40%;
-    right: 0;
-    -background: red;
-    height: 85%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+
+.Fav-Form {
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  right: 0;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
 }
 
-.VehichlosFavorito{
-  
-    height: 100px;
-    border: dashed 2px #fff;
-    width: 70%;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-    padding-inline: 10px;
+.VehichlosFavorito {
+  height: 100px;
+  border: dashed 2px #fff;
+  width: 70%;
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  padding-inline: 10px;
 }
 
-.Caja-Fav{
-    width: 70px;
-    height: 70px;
-    background: #fff;
-    border-radius: 5px;
-    margin-inline: 3px;
+.Caja-Fav {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 5px;
+  margin-inline: 3px;
 }

@@ -44,7 +44,7 @@ export function Inventory(){
                         <div>
                             <div className="Titulo_Inventario">
                                 <h1>¡Elije tu marca</h1>
-                                <h3 className="Borde-Letra">Y Vehiculo favotiro</h3>
+                                <h3 className="Borde-Letra">Y Vehiculo favorito</h3>
                                 <h5>Para tus paseos!</h5>
                                 <div>
                                 <h2 className="Borde-Letra2">Disfruta de Auto<span>Flex</span></h2>

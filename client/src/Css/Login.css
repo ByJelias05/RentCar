@@ -1,0 +1,96 @@
+/* Estilos para la página de login */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../Images/Home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    padding: 0 20px; /* Espaciado adicional para pantallas pequeñas */
+  }
+  
+  .login-container {
+    background: rgba(0, 0, 0, 0.7);  /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px; /* Aumentar el ancho máximo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);  /* Sombra más suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ .login-page h2 {
+    text-align: center;
+    color: #f39c12;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px; /* Espaciado entre campos */
+  }
+  
+  .login-page .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ffffff;  /* Color de texto blanco */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border: 2px solid #f39c12;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-login:hover {
+    background-color: #e67e22;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .forgot-password a {
+    color: #f39c12;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }

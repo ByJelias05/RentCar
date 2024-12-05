@@ -5,6 +5,8 @@ import { Inventory } from '../Components/Sections/inventory';
 import { Reservations } from '../Components/Sections/Reservations';
 import { Services } from '../Components/Sections/Services';
 import { Slide } from '../Components/Slide/Slide';
+import ConnectionTest from '../Components/ConnectionTest';
+
 import '../Css/App.css';
 
 import { createContext, useState } from 'react';
@@ -33,6 +35,9 @@ function App() {
           <Reservations/>
           <Services/>
           <Contacto/>
+          <div style={{ padding: "20px", backgroundColor: "#f9f9f9", marginTop: "20px" }}>
+            <ConnectionTest />
+          </div>
         </div>
     </div>
    </MenuContext.Provider>

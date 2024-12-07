@@ -15,16 +15,13 @@ export function Slide(){
 
     return(
         <div className="Contenedor_Slide">
-            <div className="Btn-Atras">
-                <button><IoChevronBack/></button>
-            </div>
+       
             <div className="Menu-Abrir" >
                 <CiMenuFries  onClick={() =>{setAbrirMenu(!AbrirMenu)}}/>
             </div>
-            <Home/>
-            <div className="Btn-Delante">
-                <button><IoChevronForward/></button>
-            </div>
+                <Home/>
+           
+    
         </div>
     );
 }

@@ -9,7 +9,7 @@ import ConnectionTest from '../Components/ConnectionTest';
 
 import '../Css/App.css';
 
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const MenuContext = createContext();
 
@@ -17,6 +17,8 @@ function App() {
   
   const [AbrirMenu, setAbrirMenu] = useState(false);
   const [ApagarMenu, setApagarMenu] = useState(false);
+
+
 
   return (
    <MenuContext.Provider value={[AbrirMenu, setAbrirMenu, setApagarMenu]}>

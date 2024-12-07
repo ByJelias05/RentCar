@@ -1,10 +1,13 @@
 
 .Contenedor_Slide{
+    width: 100%;
+    height: 100%;
     position: relative;
-    overflow-x: hidden;
+    --background: red;
     position: relative;
-    top: 130px;
+    overflow: hidden;
 }
+
 
 
 .Contenedor_Slide .Btn-Atras {
@@ -58,7 +61,7 @@
     top: 0;
     color: #fff;
     transform: translateX(100px);
-    margin-top: 60px;
+    margin-top: 180px;
    
     width: 35%;
 }
@@ -75,6 +78,11 @@
     font-weight: bold;
     font-size: 50px;
     color: red;
+}
+
+.Back-Image{
+    height: 100vh;
+
 }
 
 .Contenedor_Slide .Body-Slide .Info{
